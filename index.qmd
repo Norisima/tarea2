@@ -4,7 +4,6 @@ format: html
 editor: visual
 ---
 
-
 ```{r}
 #| message: false
 #| warning: false
@@ -55,6 +54,7 @@ covid_general <-
   covid_general |>
   mutate(FECHA = as.Date(FECHA, format = "%d/%m/%Y"))
 ```
+
 ```{r}
 # Tabla de datos de COVID generales
 covid_general |>
@@ -63,6 +63,7 @@ covid_general |>
     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')
   ))
 ```
+
 ```{r}
 grafico_barras_ggplot2 <-
   covid_general|>
@@ -76,6 +77,7 @@ ggplotly(grafico_barras_ggplot2) |>
   config(locale = 'es')
 
 ```
+
 ```{r}
 # Gráfico de líneas con la evolución de los casos de COVID
 grafico_lineas_ggplot2 <-
@@ -99,6 +101,7 @@ grafico_lineas_ggplot2 <-
 ggplotly(grafico_lineas_ggplot2) |>
   config(locale = 'es')
 ```
+
 ```{r}
 # Gráfico de líneas con la evolución de los casos de COVID
 grafico_lineas_ggplot2 <-
@@ -124,7 +127,12 @@ grafico_lineas_ggplot2 <-
 ggplotly(grafico_lineas_ggplot2) |>
   config(locale = 'es')
 ```
+
 ```{r}
+#| message: false
+#| warning: false
+
+
 covid_cantonal_positivos <-
   read_delim(
     file = "D:/1semestre/programacion/tarea2/05_30_22_CSV_POSITIVOS.csv",
@@ -152,11 +160,12 @@ covid_cantonal_positivos |>
     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')
   ))
 ```
+
 ```{r}
 histograma_ggplot2 <-
 covid_cantonal_positivos |>
   ggplot(aes(x = positivos)) +
-  geom_histogram(bins = 82) +
+  geom_histogram(bins = 6) +
   ggtitle("Casos Positivos en Cantones") +
   xlab("Casos") +
   ylab("Frecuencia") +
@@ -166,4 +175,3 @@ covid_cantonal_positivos |>
 ggplotly(histograma_ggplot2) |> 
   config(locale = 'es')
 ```
-
