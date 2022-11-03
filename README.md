@@ -1,5 +1,6 @@
 # Tarea 2  
-## tarea datos COVID
+## Tarea Datos COVID
+### Gráficos 
 
 A continuación, se desarrolla un documento en Quarto, con bloques de código en R, para realizar las tablas y los gráficos se utilizaron los datos de COVID para el país de Costa Rica hasta la fecha de al 30 de mayo de 2022. Los datos para realizar en estos análisis se encontraron en https://oges.ministeriodesalud.go.cr/.       
 Se inició cargando las librerías necesarias para poder realizar los análisis por medio de gráficas.  Los datos de archivos fueron de Covid general y positivos por cantones, para ambos datos se generó tablas de datos. 
